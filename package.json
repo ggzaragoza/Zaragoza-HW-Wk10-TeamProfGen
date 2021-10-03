@@ -1,0 +1,26 @@
+{
+  "name": "11-express",
+  "version": "1.0.0",
+  "description": "homework init",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggzaragoza/Zaragoza-HW-Wk10-TeamProfGen.git"
+  },
+  "author": "Greg Zaragoza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ggzaragoza/Zaragoza-HW-Wk10-TeamProfGen/issues"
+  },
+  "homepage": "https://github.com/ggzaragoza/Zaragoza-HW-Wk10-TeamProfGen#readme"
+}
