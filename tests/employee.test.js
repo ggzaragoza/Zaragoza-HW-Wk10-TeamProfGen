@@ -24,6 +24,39 @@ describe("Employee", () => {
     });
   });
 
+  describe("getName", () => {
+    it("should return string containing name input", () => {
+      const obj = new Employee();
+      
+      let str = this.name;
+      const result = obj.getName();
+      
+      expect(result).toEqual(str);
+    });
+  });
+
+  describe("getId", () => {
+    it("should return string containing entered ID number", () => {
+      const obj = new Employee();
+      
+      let str = this.id;
+      const result = obj.getId();
+      
+      expect(result).toEqual(str);
+    });
+  });
+
+  describe("getEmail", () => {
+    it("should return string containing entered email address", () => {
+      const obj = new Employee();
+      
+      let str = this.email;
+      const result = obj.getEmail();
+      
+      expect(result).toEqual(str);
+    });
+  });
+
   describe("getRole", () => {
     it("should return string specifying role of 'Employee'", () => {
       const obj = new Employee();
