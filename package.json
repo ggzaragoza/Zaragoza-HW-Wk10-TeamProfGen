@@ -1,17 +1,14 @@
 {
-  "name": "11-express",
+  "name": "10-oop",
   "version": "1.0.0",
   "description": "homework init",
   "main": "index.js",
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "test": "tests"
   },
-  "dependencies": {
-    "inquirer": "^8.1.5"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/ggzaragoza/Zaragoza-HW-Wk10-TeamProfGen/issues"
   },
-  "homepage": "https://github.com/ggzaragoza/Zaragoza-HW-Wk10-TeamProfGen#readme"
+  "homepage": "https://github.com/ggzaragoza/Zaragoza-HW-Wk10-TeamProfGen#readme",
+  "dependencies": {
+    "inquirer": "^8.1.5",
+    "jest": "^27.2.4"
+  }
 }
