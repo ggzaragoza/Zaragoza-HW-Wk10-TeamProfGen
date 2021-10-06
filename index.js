@@ -5,7 +5,6 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/manager.js');
 const Engineer = require('./lib/engineer.js');
 const Intern = require('./lib/intern.js');
-const Employee = require('./lib/employee.js');
 
 
 const teamMembers = [];
@@ -68,11 +67,6 @@ addManager = () => {
             teamMembers.push(teamManager);
 
             buildTeam();
-
-            // const filename = `${data.title.toLowerCase().split(' ').join('')}.md`;
-
-            // fs.writeFile('index.html', teamContent(data), (err) => 
-            //     err ? console.error(err) : console.log('Success! A README for your new project has been created.'))
         });
 };
 
@@ -224,12 +218,12 @@ generateTeamProfile = () => {
     console.log(teamMembers);
     formatTeam(teamMembers);
 
-    fs.writeFile('./dist/index.html', formatTeam(teamMembers), (err) => 
+    fs.writeFile('./dist/myteam.html', formatTeam(teamMembers), (err) => 
     err ? console.error(err) : console.log('Success! Your new team profile has been created.'))
 }
 
 formatTeam = (teamMembers) => {
-    let content = "";
+    let content = "<h1>My Team</h1>";
 
     teamMembers.forEach(buildCard);
 
@@ -237,11 +231,11 @@ formatTeam = (teamMembers) => {
         let employeeInfo = '';
 
         if (item.getRole() === 'Engineer') {
-            employeeInfo = item.github;
+            employeeInfo = '<a href="https://github.com/' + item.github + '" target="_blank">github.com/' + item.github + '</a>';
         } else if (item.getRole() === 'Intern')  {
-            employeeInfo = item.school;
+            employeeInfo =  'School: ' + item.school;
         } else {
-            employeeInfo = item.officeNumber;
+            employeeInfo = 'Office #: ' + item.officeNumber;
         };
 
         content +=
@@ -258,9 +252,3 @@ formatTeam = (teamMembers) => {
 }
 
 addManager();
-
-
-// teamContent = (data) => {
-
-// return content;
-// };
