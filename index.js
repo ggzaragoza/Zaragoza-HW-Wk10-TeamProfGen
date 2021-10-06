@@ -5,6 +5,7 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/manager.js');
 const Engineer = require('./lib/engineer.js');
 const Intern = require('./lib/intern.js');
+const Employee = require('./lib/employee.js');
 
 
 const teamMembers = [];
@@ -221,11 +222,40 @@ buildTeam = () => {
 
 generateTeamProfile = () => {
     console.log(teamMembers);
+    formatTeam(teamMembers);
 
-    fs.writeFile('./dist/index.html', JSON.stringify(teamMembers), (err) => 
-    err ? console.error(err) : console.log('Success! A README for your new project has been created.'))
+    fs.writeFile('./dist/index.html', formatTeam(teamMembers), (err) => 
+    err ? console.error(err) : console.log('Success! Your new team profile has been created.'))
 }
 
+formatTeam = (teamMembers) => {
+    let content = "";
+
+    teamMembers.forEach(buildCard);
+
+    function buildCard(item) {
+        let employeeInfo = '';
+
+        if (item.getRole() === 'Engineer') {
+            employeeInfo = item.github;
+        } else if (item.getRole() === 'Intern')  {
+            employeeInfo = item.school;
+        } else {
+            employeeInfo = item.officeNumber;
+        };
+
+        content +=
+`
+<h2>${item.name}</h2>
+<h2>${item.getRole()}</h2>
+<h3>${item.id}</h3>
+<h4><a href="mailto:${item.email}">${item.email}</a></h4>
+<h5>${employeeInfo}</h5>`;
+
+    }
+
+    return content;
+}
 
 addManager();
 
