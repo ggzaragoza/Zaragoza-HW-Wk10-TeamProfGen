@@ -227,7 +227,7 @@ generateTeamProfile = () => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;700;900&display=swap">
-    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="./src/style.css">
     <title>My Team Profile</title>
 </head>
 
@@ -243,7 +243,7 @@ generateTeamProfile = () => {
 
 </html>`;
 
-    fs.writeFile('./dist/myteam.html', templateHTML, (err) => 
+    fs.writeFile('myteam.html', templateHTML, (err) => 
     err ? console.error(err) : console.log('Success! Your new team profile has been created.'))
 }
 
