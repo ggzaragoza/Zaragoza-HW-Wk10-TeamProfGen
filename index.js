@@ -15,7 +15,7 @@ addManager = () => {
         .prompt([
             {
                 type: 'input',
-                message: ' This application will generate a new team profile page for your team. A team manager is required for each team, please enter your first and last name. (required)',
+                message: "Welcome to the Team Profile Generator. This application will generate a new team profile. A manager is required for each team. Please enter your manager's first and last name. (required)",
                 name: 'managerName',
                 validate: (input) => {
                     if (input === '') {
