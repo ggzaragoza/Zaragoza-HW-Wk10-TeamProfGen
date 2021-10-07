@@ -21,6 +21,8 @@ This application will first ask for the team manager's name, employee ID, email 
 Demonstration video: <a href="https://watch.screencastify.com/v/U2E10aHoY5AChRhDxLPt">https://watch.screencastify.com/v/U2E10aHoY5AChRhDxLPt</a>
 ## Testing
 Test suites were included in this repository. Run 'npm test' to monitor the code for each class of employee.
+
+Shoutout to my boyfriend and friends in advance for letting me use their names in my sample HTML.
 ## Contributions
 Users are welcome to download or fork/clone this repository and add improvements or updates. Feel free to reach out below as well!
 ## License
