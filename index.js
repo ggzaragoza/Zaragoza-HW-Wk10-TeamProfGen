@@ -214,16 +214,42 @@ buildTeam = () => {
         });
 }
 
+
 generateTeamProfile = () => {
     console.log(teamMembers);
-    formatTeam(teamMembers);
 
-    fs.writeFile('./dist/myteam.html', formatTeam(teamMembers), (err) => 
+    const templateHTML = 
+`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;700;900&display=swap">
+    <link rel="stylesheet" href="../src/style.css">
+    <title>My Team Profile</title>
+</head>
+
+    <body>
+
+        <header><h1>My Team Profile</h1></header>
+
+        <main>
+            ${formatTeam(teamMembers)}
+        </main>
+
+    </body>
+
+</html>`;
+
+    fs.writeFile('./dist/myteam.html', templateHTML, (err) => 
     err ? console.error(err) : console.log('Success! Your new team profile has been created.'))
 }
 
+
 formatTeam = (teamMembers) => {
-    let content = "<h1>My Team</h1>";
+    let content = '';
 
     teamMembers.forEach(buildCard);
 
@@ -231,7 +257,7 @@ formatTeam = (teamMembers) => {
         let employeeInfo = '';
 
         if (item.getRole() === 'Engineer') {
-            employeeInfo = '<a href="https://github.com/' + item.github + '" target="_blank">github.com/' + item.github + '</a>';
+            employeeInfo = 'GitHub: <a href="https://github.com/' + item.github + '" target="_blank">github.com/' + item.github + '</a>';
         } else if (item.getRole() === 'Intern')  {
             employeeInfo =  'School: ' + item.school;
         } else {
@@ -240,15 +266,21 @@ formatTeam = (teamMembers) => {
 
         content +=
 `
-<h2>${item.name}</h2>
-<h2>${item.getRole()}</h2>
-<h3>${item.id}</h3>
-<h4><a href="mailto:${item.email}">${item.email}</a></h4>
-<h5>${employeeInfo}</h5>`;
+            <section>
+
+                <div><h2>${item.name}</h2></div>
+                <div><h3>${item.getRole()}</h3></div>
+                <div><h4>ID: ${item.id}</h4></div>
+                <div><h5><a href="mailto:${item.email}">${item.email}</a></h5></div>
+                <div><h5>${employeeInfo}</h5></div>
+
+            </section>
+`;
 
     }
 
     return content;
 }
+
 
 addManager();
