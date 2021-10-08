@@ -31,7 +31,7 @@ describe("Engineer", () => {
   });
 
   describe("getGithub", () => {
-    it("should return string specifying entered office number", () => {
+    it("should return string specifying entered GitHub username", () => {
       const obj = new Engineer();
       
       let str = this.github;

@@ -31,7 +31,7 @@ describe("Intern", () => {
   });
 
   describe("getSchool", () => {
-    it("should return string specifying entered office number", () => {
+    it("should return string specifying entered school", () => {
       const obj = new Intern();
       
       let str = this.school;
